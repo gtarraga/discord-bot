@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
-const token = "MjM0MDg1OTUxMjg0OTY5NDcy.Ctm59Q.HWG9NZXTM8xnzvfcmR69QavdQMg";
+const token = "";
 const user = bot.users;
 const newChannel = user.game;
 
@@ -70,6 +70,68 @@ bot.on("message", message => {
    else if(rnd===4) message.channel.sendMessage("Probably.");
    else if(rnd===5) message.channel.sendMessage("Yes.");
  };
+});
+
+
+var res=0;
+var result="";
+
+bot.on('message', message => {
+  if(message.content==="/start"){
+    res =getRandomInt(1,3);
+    //scissors 1
+    //paper 2
+    //rock 3
+    if(res===1){
+      result="scissors";
+    }else if(res===2){
+      result="paper";
+    }else if(res===3){
+      result="rock";
+    }
+    message.channel.sendMessage("/rock, /paper or /scissors?");
+  }
+    if(message.content==="/rock"){
+      if(res===2){
+        //win
+        message.channel.sendMessage("I got "+ result);
+        message.channel.sendMessage("You got Rekt boi");
+      }else if(res===1){
+        //lose
+        message.channel.sendMessage("I got "+ result);
+        message.channel.sendMessage("I'm triggered right now");
+      }else if(res===3){
+        //draw
+        message.channel.sendMessage("I got "+ result);
+        message.channel.sendMessage("Draw");
+      }else{
+        message.channel.sendMessage("You have to /start the game")
+      }
+    }else if(message.content==="/paper"){
+      if(res===1){
+        //win
+        message.channel.sendMessage("I got "+ result);
+        message.channel.sendMessage("You got Rekt boi");
+      }else if(res===3){
+        message.channel.sendMessage("I got "+ result);
+        message.channel.sendMessage("I'm triggered right now");
+      }else if(res===2){
+        message.channel.sendMessage("I got "+ result);
+        message.channel.sendMessage("Draw");
+      }
+    }else if(message.content==="/scissors"){
+      if(res===3){
+        //win
+        message.channel.sendMessage("I got "+ result);
+        message.channel.sendMessage("You got Rekt boi");
+      }else if(res===2){
+        message.channel.sendMessage("I got "+ result);
+        message.channel.sendMessage("I'm triggered right now");
+      }else if(res===1){
+        message.channel.sendMessage("I got "+ result);
+        message.channel.sendMessage("Draw");
+      }
+    }
 });
 
 bot.login(token);
