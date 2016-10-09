@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
-const token = "";
+const token = "MjM0MDg1OTUxMjg0OTY5NDcy.Ctm59Q.HWG9NZXTM8xnzvfcmR69QavdQMg";
 const user = bot.users;
 const newChannel = user.game;
 
@@ -78,7 +78,7 @@ var result="";
 
 bot.on('message', message => {
   if(message.content==="/start"){
-    res =getRandomInt(1,3);
+    res = randomIntInc(1,3);
     //scissors 1
     //paper 2
     //rock 3
