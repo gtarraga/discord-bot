@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
-const token = "MjM0MDg1OTUxMjg0OTY5NDcy.Ctm59Q.HWG9NZXTM8xnzvfcmR69QavdQMg";
+const token = "";
 const user = bot.users;
 const newChannel = user.game;
 
