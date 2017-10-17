@@ -32,23 +32,6 @@ bot.on("presenceUpdate", (oldUser, newUser) => {
     firstTime = 0;
   }
 
-/*
-  else if(firstTime === 0){
-    for (var channel of newUser.channel.guild.channels) {
-      // If the channel is a voice channel, ...
-      if (channel instanceof Discord.VoiceChannel) {
-        //delete the channel
-        if(channel.members.size === 0){
-          bot.delete().
-          channel.delete()
-          .then() // success
-          .catch(console.log); // log error;
-        }
-        break;
-      }
-    }
-  }
-*/
 
 //Deletes the voiceChannel when it's empty and no user is playing the associated game.
   if (newUser.game === null){
